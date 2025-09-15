@@ -9,7 +9,11 @@ import pickle
 warnings.filterwarnings('ignore')
 from feature import FeatureExtraction
 import os
-file = open("pickle/model.pkl","rb")
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "pickle", "model.pkl")
+
+file = open(model_path, "rb")
 gbc = pickle.load(file)
 file.close()
 template_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "Frontend", "templates")
